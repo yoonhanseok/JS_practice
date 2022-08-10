@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#TTA_button").click(function() {
+          var txtBox = $("#TXTbox").val();
+          if (txtBox === "") {
+            alert("내용을 입력하세요");
+          }else {
+            alert(txtBox);
+          }
+        });
+      });
+
+      $(function(){
+        $(".TCC_button").click(function(){
+          var btVal = $(".TCC_button").val();
+          if (btVal === "색 바꾸기"){
+            $("#TCC_TEXT").css("color", "red");
+            btVal = $(".TCC_button").val("되돌리기");
+          } else {
+            $("#TCC_TEXT").css("color", "black");
+            btVal = $(".TCC_button").val("색 바꾸기");
+          }
+        });
+      });
+
+       $(function(){
+        $(".PMC_button").click(function(){
+          var btVal = $(".PMC_button").val();
+          if (btVal === "다크모드"){
+            $("#PAGEmodeCHANGE").css("color", "white");
+            $("#PAGEmodeCHANGE").css("backgroundColor", "#5c5c5c");
+            btVal = $(".PMC_button").val("컬러모드");
+          } else {
+            $("#PAGEmodeCHANGE").css("color", "black");
+            $("#PAGEmodeCHANGE").css("backgroundColor", "#9be88b");
+            btVal = $(".PMC_button").val("다크모드");
+          }
+        });
+      });
+
+      $(function(){
+       $(".FSC_button").click(function(){
+         var btVal = $(".FSC_button").val();
+         if (btVal === "폰트 키우기"){
+           $("#FONTsizeCHANGE").css("fontSize", "25px");
+           btVal = $(".FSC_button").val("원래대로");
+         } else {
+           $("#FONTsizeCHANGE").css("fontSize", "");
+           btVal = $(".FSC_button").val("폰트 키우기");
+         }
+       });
+     });
+
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>자바스크립트 연습장 V2</title>
+  </head>
+  <body>
+    <div class="master_frame">
+      <div class="title_frame">
+        <h1>자바스크립트 연습하기 V2</h1>
+      </div>
+      <div class="inner_frame">
+        <div class="TXTtoALERT">
+          <h3>Text to ALERT</h3>
+          <input id="TXTbox" type="text" name="TXTbox">
+          <input id="TTA_button" type="button" value="제출하기">
+        </div>
+        <div class="TXTcolorCHANGE">
+          <h3 id="TCC_TEXT">Text Color Change</h3>
+          <input class="TCC_button" type="button" value="색 바꾸기">
+        </div>
+        <div id="PAGEmodeCHANGE">
+          <h3>Page Mode Change</h3>
+          <input class="PMC_button" type="button" name="PMC_button" value="다크모드">
+        </div>
+        <div id="FONTsizeCHANGE">
+          <h3>Font size Change</h3>
+          <input class="FSC_button" type="button" name="FSC_button" value="폰트 키우기">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
